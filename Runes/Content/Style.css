@@ -1,0 +1,40 @@
+﻿.holder{
+    height:250px;
+    width: 400px;
+    background-color:darkslategrey;
+    border: solid 2px black;
+    padding:30px;
+    display:inline-block;
+}
+.upper {
+}
+.lower {
+    background-color: aliceblue;
+    padding: 20px;
+}
+#picture {
+    height: 50px;
+    width: 50px;
+    border: solid 1px black;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+#translit {
+    display: inline-block;
+    font-family: Papyrus;    
+}
+#short {
+    display: inline-block;
+    font-family: Papyrus;
+    margin-left: 5px;
+}
+#description, #extras{
+    margin: 20px;    
+}
+#extras > p{
+    font-style: italic;
+}
+
+ul > li {
+    list-style-type: none;
+}

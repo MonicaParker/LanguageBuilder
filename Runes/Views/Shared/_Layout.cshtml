@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html ng-app="LangHelper">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/Style.css" rel="stylesheet" />
+    <base href="/" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Language Helper", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/rune">Runes</a></li>
+                    <li><a href="/test-compare">Comparison Test</a></li>
+                    <li><a href="/test-word">Word Test</a></li>
+                    <li><a href="/test-sentence">Sentence Test</a></li>
+
+                    <!--
+                        
+<div class="holder">
+    <div class="upper">
+        <div id="picture">
+            Picture here
+        </div>
+        <div id="translit">
+            Ea
+        </div>       
+        <div id="short">
+            (gale)
+        </div>
+    </div>
+    <div class="lower">
+        <div id="description">  
+            A force or power, as a great wind sweeps across the plains bending tree and parting grass with the strength of its empty substance.
+        </div>
+        <div id="quote">
+            Picture here.
+        </div>
+    </div>
+ </div>
+
+.holder{
+    height:250px;
+    width: 400px;
+    background-color:grey;
+    border: solid 2px black;
+}
+.upper {
+}
+.lower {
+    
+}
+#picture {
+    height: 50px;
+    width: 50px;
+    border: solid 1px black;
+    margin: 10px;
+    display: inline-block;
+}
+#translit {
+    display: inline-block;
+    font-family: Papyrus;    
+}
+#short {
+    display: inline-block;
+    font-family: Papyrus;
+    margin-left: 5px;
+}
+#description, #extras{
+    margin: 20px;    
+}
+#extras > p{
+    font-style: italic;
+}
+
+                    -->
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+    <script src="~/Scripts/angular-resource.js"></script>
+
+    <script src="~/JS/app.js"></script>
+    <script src="~/JS/RunesService.js"></script>
+    <script src="~/JS/RunesController.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Runes</h2>
+
+
+            <!--Create Modal here later-->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Create Word</h3>
+                        <form ng-submit="main.add()">
+                            <div>
+                                <label>Character: </label><input type="text" ng-model="main.newRune.Character" placeholder="Image URL" />
+                            </div>
+                            <div>
+                                <label>Name: </label><input type="text" ng-model="main.newRune.Name" />
+                            </div>
+                            <div>
+                                <label>Short: </label><input type="text" ng-model="main.newRune.Short" />
+                            </div>
+                            <div>
+                                <label> Meaning: </label><textarea ng-model="main.newRune.Meaning"></textarea>
+                            </div>
+                            <div>
+                                <label>Extras: </label><textarea ng-model="main.newRune.Extras">Extra info</textarea>
+                            </div>
+                            <input type="submit" value="Enter" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Words</h3>
+                        
+                        <div class="holder" ng-repeat="rune in main.runes">
+                            <a href="#" ng-click="main.remove()">Delete</a>
+
+                            <div class="upper">
+                                <div id="picture">
+                                    {{rune.Character}}
+                                </div>
+                                <div id="translit">
+                                    {{rune.Name}}
+                                </div>
+                                <div id="short">
+                                    {{rune.Short}}
+                                </div>
+                            </div>
+                            <div class="lower">
+                                <div id="description">
+                                    <p>{{rune.Meaning}}</p>
+                                    <p>{{rune.Extras}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

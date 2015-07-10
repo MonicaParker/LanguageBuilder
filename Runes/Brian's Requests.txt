@@ -1,0 +1,57 @@
+﻿Stories:
+
+WHEEL
+Want the eight categories on a wheel
+Want an animation leading to character index whenever you pick a category
+All of them should have the same number of characters.
+	If one has more than the others, it should be highlighted yellow
+	If one has less than the others, it should be highlighted red
+
+VIEW MODE
+Want to view individual runes 
+Want to see character image for rune
+Want to see transliteration of rune
+Want to hear pronunciation of rune
+Want to see meaning for rune
+Want to see option to add new rune
+
+COMPARISON MODE
+Need to compare descriptions
+Need to compare images
+Need to be able to edit it right there if you don't like it
+
+MEMORIZATION MODE
+Want to quiz person on character image
+Want to quiz person on transliteration
+Want to quiz person on meaning
+
+REDUNDANCE TEST (so much irony here)
+Return a random rune from the database.
+Text field to type meaning or transliteration into.
+As you type, the description of meaning comes up in the side box.
+Enter to add.
+Hover to see meaning. 
+Click rune to remove from word.
+
+WORD TEST 
+Generate a random word from the English dictionary.
+Text field to type meaning or transliteration into.
+As you type, the description of meaning comes up in the side box.
+Enter to add.
+Hover to see meaning. 
+Click rune to remove from word.
+
+SENTENCE TEST 
+Want to be able to test language capabilities by putting it into practice.
+Generate a random sentence. App will need to outsource for this.
+Text field to type meaning or transliteration into.
+As you type, the description of meaning comes up in the side box.
+Enter to add.
+Hover to see meaning. 
+Click rune to remove from word.
+
+(I think the character area will need to be a grid that you add things into.)
+(You should be able to save the grid when you're done.)
+
+
+Step 1: Get Rune Crud working
