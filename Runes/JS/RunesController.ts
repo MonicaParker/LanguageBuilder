@@ -2,24 +2,26 @@
 /// <reference path="../scripts/typings/jquery/jquery.d.ts" />
 /// <reference path="runesservice.ts" />
 
+//Brian, you are crazy and your language is ridiculous and I will have my revenge.
+
 (function () {
-    angular.module("LangHelper").controller('RunesController', function ($location, RunesService) {
+    angular.module("LangHelper").controller('RunesController', function ($location, RunesService, $resource) {
         var self = this;
 
         //Rune item
+        //Working!
         var Rune = RunesService.Rune;
 
         //All runes
+        //Working!
         self.runes = RunesService.runes;
 
-        //function openCreate() {
-        //    var modalInstance = $modal.open({
-        //        templateUrl: '/ngViews/Create.Html',
-        //        controller: 'PageController'
-        //    });
-        //};
+        self.count = function () {
+            return RunesService.runes.length;
+        }
 
-        //Create rune
+        //Create rune 
+        //Working!
         self.add = function () {
             var name = self.newRune.Name;
             var firstLetter = name.charAt(0);
@@ -38,14 +40,15 @@
                 self.runes.push(result);
             });
         };
-        //Sorting takes place client side, during filtering.
 
+        //Validation needs:
+        //Validation for transliteration; validation for img url, 
+       
         //Edit rune
-        //Want to be able to double click on display field to edit.
         $(".display").dblclick(function (original) {
             alert(original);
 
-            //I'd only be double clicking one field at a time, not submitting them all. Can I do this?
+            //Persist changes to server
             var updatedRune = new Rune({
                 Id: self.newRune.Id,
                 Character: self.newRune.Character,
@@ -59,7 +62,8 @@
         });
 
         
-        //Delete rune
+        //Delete rune 
+        //Working!
         self.remove = function (original) {
             original.$remove({ id: original.Id }, function () {
                 self.runes = self.runes.filter(function (rune) {
@@ -68,6 +72,11 @@
             });
         };
 
+    });
+
+    //Supports edit in place feature
+    angular.module("LangHelper").run(function (editableOptions) {
+        editableOptions.theme = 'bs3';
     });
 
 })();

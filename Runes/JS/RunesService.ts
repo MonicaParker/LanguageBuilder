@@ -5,13 +5,15 @@
 
 (function () {
     angular.module("LangHelper").factory('RunesService', function ($resource) {
-        
+        var self = this;
         var Rune = $resource('/api/runes/:id');
         var runes = Rune.query();
-
+        var count = runes.length;
+        
         return {
             Rune: Rune,
-            runes: runes
+            runes: runes,
+            count: count,
         };
     });
 

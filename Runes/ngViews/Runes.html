@@ -33,28 +33,78 @@
 
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-12">
-                        <h3>Words</h3>
-                        
-                        <div class="holder" ng-repeat="rune in main.runes">
-                            <a href="#" ng-click="main.remove()">Delete</a>
+                    <div class="col-sm-12">
+                        <h4>Organize</h4>
+                        <button>Alphabetical</button>
+                    </div>
+                </div>
+            </div>
 
+            <div class="holder">
+                <div class="upper">
+                    <div id="picture">
+                    </div>
+                    <div id="meaning">
+                    </div>
+                </div>
+                <div class="lower">
+                    <div id="description">
+                        <div>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+                <div class="last">
+                </div>
+            </div>
+
+
+            <hr />
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Runes (#)</h3>
+
+                        <div class="col-md-3">
+                            Sort by:
+                        </div>
+                        <div class="col-md-3">
+                            <button>Name</button>
+                        </div>
+                        <div class="col-md-3">
+                            <button>Meaning</button>
+                        </div>
+                        <div class="col-md-3">
+                            <button>Locked</button>
+                        </div>
+
+                        <div class="holder" ng-repeat="rune in main.runes">
                             <div class="upper">
-                                <div id="picture">
-                                    {{rune.Character}}
+                                <div id="picture" editable-text="rune.Character">
+                                    {{rune.Character || 'N/A'}}
                                 </div>
-                                <div id="translit">
-                                    {{rune.Name}}
-                                </div>
-                                <div id="short">
-                                    {{rune.Short}}
+                                <div id="meaning">
+                                    <span editable-text="rune.Name">{{rune.Name || 'N/A'}}</span>
+                                    <span editable-text="rune.Short">({{rune.Short || ' '}})</span>
                                 </div>
                             </div>
                             <div class="lower">
                                 <div id="description">
-                                    <p>{{rune.Meaning}}</p>
-                                    <p>{{rune.Extras}}</p>
+                                    <div editable-text="rune.Meaning">
+                                        {{rune.Meaning || 'No description provided.'}}
+                                    </div>
+                                    <div editable-text="rune.Extras">
+                                        {{rune.Extras || 'No details provided.'}}
+                                    </div>
                                 </div>
+                            </div>
+                            <div class="lock">
+                                <a href="#" ng-click="main.lock()" class="options">Lock</a>
+                            </div>
+                            <div class="remove">
+                                <a href="#" ng-click="main.remove(rune)" class="options">Remove</a>
                             </div>
                         </div>
 

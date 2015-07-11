@@ -1,5 +1,5 @@
 ﻿(function () {
-    angular.module("LangHelper", ['ngRoute', 'ngResource']).config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+    angular.module("LangHelper", ['ngRoute', 'ngResource', 'xeditable']).config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
         $routeProvider
         .when('/', {
             templateUrl: '/ngViews/Wheel.html',
